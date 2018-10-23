@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>no</title>
+    <link rel="stylesheet" href="assets/mui/css/mui.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/category.css">
+    <link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.css">
+    <script src="assets/mui/js/mui.min.js"></script>
+    <script src="assets/zepto/zepto.min.js"></script>
+    <script src="assets/artTemplate/template-native.js"></script>
+    <script src="js/category.js"></script>
+
+
+</head>
+
+<body>
+    <header class="mui-bar mui-bar-nav my-header">
+        <h1 class="mui-title">no buy no die</h1>
+        <a class="mui-icon mui-icon-search mui-pull-right"></a>
+    </header>
+    <nav class="mui-bar mui-bar-tab my-footer">
+        <a class="mui-tab-item mui-active" href="index.html">
+            <span class="mui-icon mui-icon-home"></span>
+            <span class="mui-tab-label">首页</span>
+        </a>
+        <a class="mui-tab-item" href="category.html">
+            <span class="mui-icon mui-icon-bars"></span>
+            <span class="mui-tab-label">分类</span>
+        </a>
+        <a class="mui-tab-item" href="cart.html">
+            <span class="mui-icon fa fa-shopping-cart"></span>
+            <span class="mui-tab-label">购物车</span>
+        </a>
+        <a class="mui-tab-item" href="user.html">
+            <span class="mui-icon mui-icon-person"></span>
+            <span class="mui-tab-label">会员中心</span>
+        </a>
+    </nav>
+    <div class="category-content">
+        <div class="cat-left">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <div class="menu-list">
+                        <a href="#">男人装</a>
+                        <a href="#">男人装</a>
+                        <a href="#">男人装</a>
+                        <a href="#">男人装</a>
+                        <a href="#">男人装</a>
+                        <a href="#">男人装</a>
+                        <a href="#">男人装</a>
+                        <a href="#">男人装</a>
+                        <a href="#">男人装</a>
+                        <a href="#">男人装</a>
+                        <a href="#">男人装</a>
+                        <a href="#">男人装</a>
+                        <a href="#">男人装</a>
+                        <a href="#">男人装</a>
+                        <a href="#">男人装</a>
+                        <a href="#">男人装</a>
+                        <a href="#">男人装</a>
+                        <a href="#">男人装</a>
+                        <a href="#">男人装</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cat-right">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <ul id="rightCate">
+                        <!-- <li><a href="#"><img src="./images/brand1.png" alt=""></a></li>
+                        <li><a href="#"><img src="./images/brand2.png" alt=""></a></li>
+                        <li><a href="#"><img src="./images/brand3.png" alt=""></a></li>
+                        <li><a href="#"><img src="./images/brand4.png" alt=""></a></li>
+                        <li><a href="#"><img src="./images/brand5.png" alt=""></a></li>
+                        <li><a href="#"><img src="./images/brand6.png" alt=""></a></li>
+                        <li><a href="#"><img src="./images/brand7.png" alt=""></a></li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+    <script type="text/template" id="category-left"> 
+        <%for(var i=0;i<data.length;i++){%>
+            <a href="javascript:;" data-id="<%=data[i].id %>" class="items getSecond"><%= data[i].categoryName %></a>
+        <%}%>
+    </script>
+    <script type="text/template" id="rightCateTpl"> 
+        <% for(var i=0;i<data.length;i++){ %>
+			<a href="#" class="items">
+				<img src="<%=data[i].brandLogo %>">
+				<span><%=data[i].brandName %></span>
+			</a>
+		<% } %>
+
+		<% if(!data.length){ %>
+			<span>暂无数据</span>
+		<% } %>
+    </script>
+</html>
