@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<!--
+<student>
+    <name>四金</name>
+    <age>28</age>
+</student>
+
+{
+    name: '四金',
+    age: 28
+}
+-->
+
+<script>
+    // 将关键字数组存储在本地
+    var str = '[{name:"xxx", age:"18"}]';
+    // JSON.parse: 将JSON字符串转换为JS对象
+    //var arr = JSON.parse(str);
+    //arr[0].name
+
+    // JSON.stringify: 将JS对象转换为JSON字符串
+    // JSON: javascript object notation
+    // 因为http协议只能传输字符串和二进制   xml ==> JSON
+    function Student(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    var stu = new Student('四金', 28);
+//    console.log(stu);
+//    console.log(JSON.stringify(stu));
+//
+//    var str = '{"name":"四金","age":28}';
+//    console.log(JSON.parse(str));
+
+    // JSON.parse 将字符串转换为JS对象  反序列化
+    // JSON.stringify 将JS对象转换为JSON字符串  序列化 serializable
+
+//    console.log(stu.toString());
+    // 因为localStorage只能存储字符串类型的数据. 如果传入非字符串类型的数据会隐式转换为字符串后存储
+    localStorage.setItem('student', JSON.stringify(stu));
+
+    var arr = ['四金', '刘希晗', '张奔驰'];
+    console.log(JSON.stringify(arr));
+
+
+    //$.ajax({
+    //	url: 'xxx',
+    //	type: 'get',
+    //	success: function (res) {
+    //		res
+    //	}
+    //})
+</script>
+</body>
+</html>
