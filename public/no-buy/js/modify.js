@@ -1,0 +1,51 @@
+$(function(){
+    $('#modifyBtn').on('tap',function(){
+        var This=$(this);
+        var  data={
+            oldPassword:$('[name="originPass"]').val().trim(),
+			newPassword:$('[name="newPass"]').val().trim(),
+			reNewPassword:$('[name="sureNewPass"]').val().trim(),
+			vCode:$('[name="checkCode"]').val().trim()
+        }
+
+        if(!data.oldPassword){
+            mui.toast('请输入原密码');
+            return;
+        }
+        if(!data.newPassword){
+            mui.toast('请输入新密码');
+            return;
+        }
+        if(data.newPassword!=data.reNewPassword){
+            mui.toast('两次输入的密码不一致');
+            return;
+        }
+        if(!/^\d{6}$/.test(data.vCode)){
+            mui.toast('验证码的格式不符合要求');
+            return;
+        }
+        $.ajax({
+            url:'/user/updatePassword',
+            type:'post',
+            data:data,
+            beforeSend:function(){
+                This.html('正在修改密码');
+            },
+            success:function(data){
+                if(data.success){
+                    location.href="login.html";
+                }else{
+                    This.html('修改密码');
+                    mui.toast('密码修改失败:'+data.message);
+                    if(data.error==400){
+                        localStorage.setItem('returnUrl',location.href);
+                        setTimeout(function(){
+                            location.href="login.html";
+                        },2000)
+                    }
+                }
+            }
+        })
+    })
+    $('#getCheckCode').on('tap',getCheckCode);
+})

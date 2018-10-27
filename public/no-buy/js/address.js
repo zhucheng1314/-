@@ -1,0 +1,27 @@
+$(function(){
+    $.ajax({
+        url:'/address/queryAddress',
+        method:'get',
+        success:function(result){
+            console.log(result);
+            $('#adress').html(template('adressTpl',{result:result}))
+        }
+    })
+
+    $('body').on('click','.deleteAdress',function(){
+        $.ajax({
+            url:'/address/deleteAddress',
+            type:'post',
+            data:{
+                id:$(this).attr('data-id')
+            },
+            success:function(result){
+                if(result.success){
+                    location.reload();//刷新页面
+                }else{
+                    mui.toast('删除地址失败');
+                }
+            }
+        })
+    })
+})

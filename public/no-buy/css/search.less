@@ -1,0 +1,117 @@
+.container{
+    padding:10px;
+    margin-top:45px;
+    .search{
+        width:100%;
+        height:30px;
+	    border:1px solid greenyellow;
+	    position:relative;
+        margin-bottom:20px;
+        input[type='text']{
+            height:28px;
+	        line-height:28px;
+	        border:none;
+	        margin-bottom:0;
+	        padding:0 70px 0 10px;
+	        font-size:14px;
+        }
+        input[type="button"]{
+            width:60px;
+            height:28px;
+            position:absolute;
+            right:0;
+            top:0;
+            border:none;
+            background:greenyellow;
+            border-radius:0;
+            color:#FFF; 
+        }
+        .mui-table-view-cell:after{
+            left:0;
+        }
+        .title{
+            padding-bottom:10px;
+        }
+    }
+}
+
+.search-bar{
+	text-align:center;
+	/* width:100%; */
+	background:#efeff4;
+	padding:8px 0;
+	font-size:14px;
+	margin-bottom:15px;
+}
+
+#refresh{
+	position:absolute;
+	left:0;
+	width:100%;
+	top:44px;
+	bottom:50px;
+}
+
+
+.product{
+    overflow: hidden;
+    padding:10px 0;
+    width:100%;
+    margin-bottom:10px;
+    >img{
+        width:100%;
+    }
+    >ul{
+        overflow: hidden;
+        >li{
+            width:50%;
+           
+            float: left;
+            >a{
+                display:block;
+                box-shadow:0 0 5px #ccc;
+                padding:5px;
+                >img{
+                    display: block;
+                    width:100%;
+                }
+                .name{
+                    display:block;
+                    color:#8f8f94;
+                    font-size: 14px;
+                    text-align: center;
+                    line-height: 18px;
+                    height:38px;
+                    overflow: hidden;
+
+                }
+                >p{
+                    text-align: center;
+                    line-height: 30px;
+                    span{
+                        margin-right: 5px;
+                        color:red;
+                        line-height: 20px;
+                        // background:linear-gradient()
+                    }
+                    del{
+                        margin-left: 5px;
+                    }
+                }
+                >.buy{
+                        display: block;
+                         width:65%;
+                         color:#fff;
+                         background-color:yellowgreen;
+                         height:40px;
+                         border:1px solid yellowgreen;
+                         border-radius:5px;
+                         text-align: center;
+                         line-height: 20px;
+                         margin:0 auto 5px;
+                }       
+                
+            }
+        }
+    }
+}
